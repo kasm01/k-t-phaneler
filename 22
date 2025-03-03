@@ -1,0 +1,1 @@
+!pip install requests websockets torch lightgbm python-dotenv binance okx web3 stable-baselines3 gym scikit-learn
