@@ -1,0 +1,12 @@
+import os
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv("/content/.env")
+
+# API Anahtarlarını Kullan
+BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
+OKX_API_KEY = os.getenv("OKX_API_KEY")
+
+print("Binance API Key:", BINANCE_API_KEY[:5] + "******")  # Güvenlik için kısmen göster
+print("OKX API Key:", OKX_API_KEY[:5] + "******")
