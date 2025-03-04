@@ -2,3 +2,4 @@
 !pip install python-binance
 !pip install kucoin-python
 !pip install ccxt
+!pip install python-okx
