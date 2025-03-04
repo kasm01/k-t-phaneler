@@ -1,0 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # .env dosyasını yükler
+
+# Değerleri manuel olarak kontrol edin
+binance_api_key = os.getenv("BINANCE_API_KEY")
+binance_api_secret = os.getenv("BINANCE_API_SECRET")
+
+if not binance_api_key:
+    print("❌ Hata: BINANCE_API_KEY bulunamadı!")
+else:
+    print("✅ Binance API Key başarıyla yüklendi.")
