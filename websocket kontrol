@@ -1,0 +1,11 @@
+async def websocket_listener(symbol):
+    """ Binance WebSocket bağlantısı üzerinden fiyatları takip eder. """
+    import json
+    uri = f"wss://stream.binance.com:9443/ws/{symbol.lower()}@trade"
+
+    async with websockets.connect(uri) as websocket:
+        while True:
+            message = await websocket.recv()
+            data = json.loads(message)
+            price = float(data["p"])
+            print(f"Binance {symbol}: {price}")  # Emoji kaldırıldı
