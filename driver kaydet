@@ -1,0 +1,13 @@
+from google.colab import auth
+from googleapiclient.discovery import build
+
+auth.authenticate_user()
+drive_service = build('drive', 'v3')
+
+results = drive_service.files().list(q="name='trading_data.txt'", spaces='drive').execute()
+files = results.get('files', [])
+
+if files:
+    print(f"✅ Google Drive'a başarıyla kaydedildi: {files[0]['name']}")
+else:
+    print("❌ Google Drive'a veri kaydedilmedi!")
