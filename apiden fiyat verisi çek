@@ -1,0 +1,16 @@
+import requests
+
+# Binance API'den gerçek zamanlı fiyat verisini çek
+binance_response = requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT").json()
+kucoin_response = requests.get("https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=BTC-USDT").json()
+okx_response = requests.get("https://www.okx.com/api/v5/market/ticker?instId=BTC-USDT").json()
+
+# API'den gelen fiyatları çek
+binance_price = float(binance_response["price"])
+kucoin_price = float(kucoin_response["data"]["price"])
+okx_price = float(okx_response["data"][0]["last"])
+
+# Fiyatları yazdır
+print(f"✅ KUCOIN BTCUSDT: {kucoin_price}")
+print(f"✅ OKX BTCUSDT: {okx_price}")
+print(f"✅ BINANCE BTCUSDT: {binance_price}")
