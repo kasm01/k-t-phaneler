@@ -1,0 +1,21 @@
+def sign_request(method, endpoint, body=""):
+    """OKX API için HMAC-SHA256 imzalama işlemi"""
+    timestamp = str(time.time())
+
+    message = timestamp + method + endpoint + body
+    signature = base64.b64encode(
+        hmac.new(
+            API_KEYS["okx"]["secret"].encode("utf-8"),
+            message.encode("utf-8"),
+            hashlib.sha256,
+        ).digest()
+    ).decode()
+
+    headers = {
+        "OK-ACCESS-KEY": API_KEYS["okx"]["key"],
+        "OK-ACCESS-SIGN": signature,
+        "OK-ACCESS-TIMESTAMP": timestamp,
+        "OK-ACCESS-PASSPHRASE": API_KEYS["okx"]["passphrase"],
+        "Content-Type": "application/json",
+    }
+    return headers
