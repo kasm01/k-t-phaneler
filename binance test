@@ -1,0 +1,21 @@
+# Binance Test
+try:
+    binance_ticker = clients["binance"].get_symbol_ticker(symbol="BTCUSDT")
+    print("✅ Binance Bağlantı Testi Başarılı:", binance_ticker)
+except Exception as e:
+    print("❌ Binance Bağlantı Hatası:", e)
+
+# KuCoin Test
+try:
+    kucoin_order_book = clients["kucoin_market"].get_order_book("BTC-USDT", limit=5)
+    print("✅ KuCoin Bağlantı Testi Başarılı:", kucoin_order_book)
+except Exception as e:
+    print("❌ KuCoin Bağlantı Hatası:", e)
+
+# OKX Test
+try:
+    headers = sign_request("GET", "/api/v5/market/ticker?instId=BTC-USDT")
+    response = requests.get(f"{OKX_API_URL}/api/v5/market/ticker?instId=BTC-USDT", headers=headers)
+    print("✅ OKX Bağlantı Testi Başarılı:", response.json())
+except Exception as e:
+    print("❌ OKX Bağlantı Hatası:", e)
