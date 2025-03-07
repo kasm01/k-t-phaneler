@@ -1,0 +1,20 @@
+import os
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv("/content/.env")
+
+# API Anahtarlarını Kullan
+BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
+OKX_API_KEY = os.getenv("OKX_API_KEY")
+# Fix: Get the key with the correct case from .env
+KuCoin_API_KEY = os.getenv("KUCOIN_API_KEY")
+
+# Check if KuCoin_API_KEY is None and provide a fallback
+if KuCoin_API_KEY is None:
+    print("❌ Hata: KUCOIN_API_KEY bulunamadı!")
+    KuCoin_API_KEY = ""  # Or any other fallback value
+
+print("Binance API Key:", BINANCE_API_KEY[:5] + "******")  # Güvenlik için kısmen göster
+print("OKX API Key:", OKX_API_KEY[:5] + "******")
+print("KuCoin API Key:", KuCoin_API_KEY[:5] + "******")
