@@ -35,6 +35,6 @@ nano main.py
 
 nano data/data_loader.py
 
-nano data/data/batch_learning.py
+nano data/batch_learning.py
 
 nano data/feature_engineering.py
