@@ -28,7 +28,7 @@ gcloud run deploy binance1 \
 
 
 
-
+nano data/online_learning.py
 
 cd ~/binance1
 nano main.py  
