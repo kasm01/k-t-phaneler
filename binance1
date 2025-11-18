@@ -2,6 +2,17 @@ gcloud run services logs read binance1 --region=europe-west2 --limit=100
 
 
 
+gcloud builds submit --tag gcr.io/binance1-476019/binance1
+
+gcloud run deploy binance1 \
+  --image gcr.io/binance1-476019/binance1 \
+  --region=europe-west2
+
+
+
+
+
+
 cd ~/binance1
 
 gcloud builds submit \
