@@ -2,6 +2,9 @@ cd ~/binance1
 nano main.py  
 
 
+gcloud run services logs read binance1 --region=europe-west2 --limit=100
+
+
 
 cd ~/binance1
 
