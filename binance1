@@ -1,6 +1,11 @@
 cd ~/binance1
 nano main.py  
 
+nano data/data_loader.py
+
+
+nano data/feature_engineering.py
+
 
 gcloud run services logs read binance1 --region=europe-west2 --limit=100
 
