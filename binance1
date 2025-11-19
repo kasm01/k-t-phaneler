@@ -1,3 +1,11 @@
+git push origin main
+Username for 'https://github.com': kasm01
+Password for 'https://kasm01@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/kasm01/binance1.git/'
+
+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
+
 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
 
 
