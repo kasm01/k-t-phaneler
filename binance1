@@ -1,3 +1,7 @@
+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
+
+
+
 gcloud run services logs read binance1 --region=europe-west2 --limit=100
 
 
