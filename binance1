@@ -1,4 +1,12 @@
+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
+
+
 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
+
+cd ~/binance1
+
+git push "https://kasm01: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@github.com/kasm01/binance1.git" main
+
 
 git push origin main
 Username for 'https://github.com': kasm01
