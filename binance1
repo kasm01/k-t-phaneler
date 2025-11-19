@@ -1,23 +1,6 @@
 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
 
 
-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
-
-cd ~/binance1
-
-git push "https://kasm01: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@github.com/kasm01/binance1.git" main
-
-
-git push origin main
-Username for 'https://github.com': kasm01
-Password for 'https://kasm01@github.com': 
-remote: Invalid username or token. Password authentication is not supported for Git operations.
-fatal: Authentication failed for 'https://github.com/kasm01/binance1.git/'
-
-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
-
-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
-
 
 
 gcloud run services logs read binance1 --region=europe-west2 --limit=100
