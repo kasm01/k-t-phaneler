@@ -1,0 +1,15 @@
+Kullanım
+
+Ne zaman istersen (özellikle):
+Çok deploy yaptığında
+Disk/Kota/aşım sorunları hissettiğinde
+Cloud Shell yavaşladığında şunu çalıştır:
+
+./cloudshell_cleanup.sh
+
+Sana sırayla soracak:
+Docker cache temizlensin mi?
+pip cache temizlensin mi?
+/tmp temizlensin mi?
+Hepsine y dersen full temizlik yapar, Enter / n dersen o adımı atlar.
+
