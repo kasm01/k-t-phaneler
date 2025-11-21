@@ -1,0 +1,101 @@
+nano ~/cloudshell_cleanup.sh
+
+
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "======================================="
+echo "   🌥  Google Cloud Shell Temizliği   "
+echo "======================================="
+echo
+
+# Küçük helper
+confirm() {
+  local prompt="$1"
+  read -r -p "$prompt [y/N]: " ans
+  case "$ans" in
+    [yY][eE][sS]|[yY]) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+########################################
+# 1) Disk kullanımını göster
+########################################
+echo "➡  Mevcut disk kullanımı:"
+df -h ~
+echo
+
+########################################
+# 2) Docker temizliği (varsa)
+########################################
+if command -v docker &>/dev/null; then
+  echo "➡  Docker bulundu."
+  if confirm "Docker image/container cache'ini temizlemek ister misin? (docker system prune -a)"; then
+    docker system prune -a -f
+    echo "✅ Docker cache temizlendi."
+  else
+    echo "⏭  Docker temizliği atlandı."
+  fi
+else
+  echo "ℹ  Docker komutu bulunamadı, docker temizliği atlanıyor."
+fi
+echo
+
+########################################
+# 3) pip cache temizliği
+########################################
+if command -v pip &>/dev/null; then
+  echo "➡  pip bulundu."
+  if confirm "pip cache'i temizlemek ister misin? (pip cache purge)"; then
+    pip cache purge || true
+    echo "✅ pip cache temizlendi."
+  else
+    echo "⏭  pip temizliği atlandı."
+  fi
+else
+  echo "ℹ  pip komutu bulunamadı, pip temizliği atlanıyor."
+fi
+echo
+
+########################################
+# 4) /tmp altını temizleme
+########################################
+echo "➡  /tmp dizini kullanımı:"
+du -sh /tmp 2>/dev/null || true
+echo
+
+if confirm "/tmp içeriğini temizlemek ister misin? (rm -rf /tmp/*)"; then
+  rm -rf /tmp/* || true
+  echo "✅ /tmp temizlendi."
+else
+  echo "⏭  /tmp temizliği atlandı."
+fi
+echo
+
+########################################
+# 5) Home içindeki büyük klasörleri göster
+########################################
+echo "➡  Home dizinindeki (~/) en büyük klasörler:"
+du -sh ~/* 2>/dev/null | sort -h | tail -n 10 || true
+echo
+echo "⚠  İstersen büyük klasörleri elle silebilirsin, örneğin:"
+echo "   rm -rf ~/some_big_folder"
+echo
+
+########################################
+# 6) Son durum
+########################################
+echo "➡  Temizlik sonrası disk kullanımı:"
+df -h ~
+echo
+echo "✅ Cloud Shell temizlik işlemi tamamlandı."
+echo "   (Bu script'i düzenleyip daha agresif hale getirebilirsin.)"
+echo "======================================="
+
+
+
+
+kaydet, çık. sonra alttakiyle çalıştırılabilir yap.
+
+chmod +x ~/cloudshell_cleanup.sh
