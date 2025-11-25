@@ -1,0 +1,53 @@
+cd ~/binance1
+
+ls
+
+
+Git durumuna bak
+git status
+
+Kırmızı görünen dosyalar → değişmiş veya yeni dosyalar
+Yeşil dosyalar → commit’e hazırolanlar
+
+
+Tüm değişiklikleri commit’e ekle
+git add .
+
+👉 Bu tüm güncellenen dosyaları commit’e dahil eder.
+
+
+Commit oluştur
+git commit -m "Update project files"
+
+
+Değişiklikleri GitHub’a push et
+
+Push komutu:
+
+git push origin main
+
+
+Eğer branch’in master ise:
+
+git push origin master
+
+
+Branch'i bilmiyorsan:
+
+git branch
+
+
+(üzerinde yıldız (*) olan aktif branch)
+
+
+Her şey yolundaysa çıktı şöyle görünür
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), done.
+To https://github.com/kasm01/binance1.git
+   128f471..523cab2  main -> main
+
+
+Bu çıktıyı görünce → proje tamamen GitHub’a güncellenmiştir.
