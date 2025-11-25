@@ -1,0 +1,68 @@
+cd ~/binance1
+ls
+Burada main.py, Dockerfile, requirements.txt vs görmen lazım.
+
+
+git status
+git add main.py
+git commit -m "Update init_trading_objects with Binance self-check"
+Git kullanmıyorsan bu adımı atlayabilirsin.
+
+
+gcloud builds submit --tag gcr.io/binance1-476019/binance1:latest
+Bu komut:
+Dockerfile’ı kullanarak imajı build eder
+gcr.io/binance1-476019/binance1:latest olarak push eder
+Bitince sana bir SUCCESS mesajı verir.
+Mevcut servis adın binance1, bölge europe-west2; şu komutla deploy edersin:
+
+gcloud run deploy binance1 \
+  --image gcr.io/binance1-476019/binance1:latest \
+  --region=europe-west2 \
+  --platform=managed \
+  --allow-unauthenticated
+
+
+Mevcut env değişkenleri (Secret bağları dahil) aynı kalır
+Sadece yeni imajla yeni bir revizyon oluşturur
+
+
+4️⃣ Servisin ayağa kalktığını kontrol et
+Önce servisin URL’sini gör:
+
+gcloud run services describe binance1 \
+  --region=europe-west2 \
+  --format='value(status.url)'
+
+  Bu URL’yi tarayıcıya yapıştır:
+
+/ veya /healthz → {"status": "ok", "service": "binance1-pro"} görürsen HTTP tarafı tamamdır.
+
+https://...run.app/healthz
+
+
+Şimdi en önemli kısım: yeni eklediğimiz self-check log’u görelim.
+
+gcloud run services logs read binance1 \
+  --region=europe-west2 \
+  --limit=50
+
+
+
+  Toplu kopya için:
+
+cd ~/binance1
+
+gcloud builds submit --tag gcr.io/binance1-476019/binance1:latest
+
+gcloud run deploy binance1 \
+  --image gcr.io/binance1-476019/binance1:latest \
+  --region=europe-west2 \
+  --platform=managed \
+  --allow-unauthenticated
+
+gcloud run services logs read binance1 \
+  --region=europe-west2 \
+  --limit=50
+
+
