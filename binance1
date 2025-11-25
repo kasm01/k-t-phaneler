@@ -10,13 +10,35 @@ gcloud run services logs read binance1-pro-bot \
 
 cd ~/binance1
 
-export BINANCE_API_KEY="senin_api_key"
-export BINANCE_API_SECRET="senin_api_secret"
+export BINANCE_API_KEY="xxxx"
+export BINANCE_API_SECRET="yyyyy"
 
 export PORT=8080
 python main.py
 
+python - << 'EOF'
+from binance.client import Client
+import os
 
+api_key = os.getenv("yyyyyyy")
+api_secret = os.getenv("xxxx")
+
+print("API KEY:", api_key)
+print("SECRET:", api_secret[:5] + "****")
+
+client = Client(api_key, api_secret)
+
+try:
+    account = client.futures_account()
+    print("✅ futures_account OK")
+    print("totalWalletBalance:", account.get("totalWalletBalance"))
+except Exception as e:
+    print("❌ futures_account ERROR:", e)
+EOF
+
+
+echo 'export BINANCE_API_KEY="zLmfcVj2joXVfhCWdmlx2NJWsT244Pv9Tog06QQIVVUr2yZVZjQsld6v0c4X7cKQ"' >> ~/.bashrc
+echo 'export BINANCE_API_SECRET="D9679iLbdTfbHV95e1VJTtBldkZwmBmwSVJC8JVShrkZmtrR4AXjvggPBct51xPV"' >> ~/.bashrc
 
 
 
