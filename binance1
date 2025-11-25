@@ -1,3 +1,15 @@
+kütüphaneler
+
+python -m pip install --user redis
+python -m pip install --user aiohttp
+python -m pip install --user numpy pandas
+python -m pip install --user scikit-learn
+python -m pip install --user python-telegram-bot==13.15
+pip install --user -r requirements.txt
+python -m pip install --user "urllib3<2"
+
+
+
 
 cd ~/binance1
 
