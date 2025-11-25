@@ -8,6 +8,13 @@ gcloud run services logs read binance1-pro-bot \
   --limit=200
 
 
+cd ~/binance1
+
+export BINANCE_API_KEY="senin_api_key"
+export BINANCE_API_SECRET="senin_api_secret"
+
+export PORT=8080
+python main.py
 
 
 
