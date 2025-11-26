@@ -1,9 +1,12 @@
 VM giriş
 gcloud compute ssh binance-bot-vm --zone=europe-west2-b
+---------------------------------
+venv aktif etme
 
-
-
-
+python3 -m venv ~/venv
+source ~/venv/bin/activate
+pip install python-dotenv requests
+-----------------------------------------------------
 kütüphaneler
 
 python -m pip install --user redis
