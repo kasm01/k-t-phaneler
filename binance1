@@ -34,8 +34,8 @@ PYTHONPATH=$(pwd) python training/offline_pretrain_six_months.py
 
 
 cd ~/binance1
-
 gcloud builds submit --tag gcr.io/binance1-476019/binance1
+
 gcloud run services logs read binance1 --region=europe-west2 --limit=100
 
 
