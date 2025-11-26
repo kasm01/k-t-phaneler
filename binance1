@@ -9,6 +9,22 @@ pip install --user -r requirements.txt
 python -m pip install --user "urllib3<2"
 
 
+Doğru URL’i her zaman şu komutla al:
+
+gcloud run services describe binance1 --region=europe-west2 --format='value(status.url)'
+
+Sonra tam bu URL + /healthz ile curl yap.
+curl -v "$SERVICE_URL/"
+
+Tarayıcıda çalışan ve JSON dönen URL ile Cloud Shell’de kullandığın URL’i birebir karşılaştır.
+
+Container içinde health handler’ın gerçekten kayıtlı olduğundan zaten eminiz (loglardan app’in ayağa kalktığını görüyoruz), ama istersen lokalden de tekrar quick test yapabilirsin:
+
+cd ~/binance1
+python main.py
+
+curl -v http://127.0.0.1:8080/healthz
+Burada JSON görüyorsan kod tarafı zaten tamamdır; tek sorun hangi Cloud Run URL’ine vurduğun olur.
 
 
 cd ~/binance1
