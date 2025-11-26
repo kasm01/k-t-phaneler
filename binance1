@@ -27,6 +27,12 @@ curl -v http://127.0.0.1:8080/healthz
 Burada JSON görüyorsan kod tarafı zaten tamamdır; tek sorun hangi Cloud Run URL’ine vurduğun olur.
 
 
+altı aylık binance verisi çekme
+cd ~/binance1
+PYTHONPATH=$(pwd) python training/offline_pretrain_six_months.py
+
+
+
 cd ~/binance1
 
 gcloud builds submit --tag gcr.io/binance1-476019/binance1
