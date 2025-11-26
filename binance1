@@ -81,45 +81,4 @@ gcloud builds submit \
 
 export IMAGE=europe-west2-docker.pkg.dev/binance1-476019/binance1-repo/binance1
 
-gcloud run deploy binance1 \
-  --image=$IMAGE \
-  --region=europe-west2 \
-  --platform=managed \
-  --set-secrets=BINANCE_API_KEY=BINANCE_API_KEY:latest \
-  --set-secrets=BINANCE_API_SECRET=BINANCE_API_SECRET:latest \
-  --set-secrets=COINGLASS_API_KEY=COINGLASS_API_KEY:latest \
-  --set-secrets=GRAPH_API_KEY=GRAPH_API_KEY:latest \
-  --set-secrets=ETH_API_KEY=ETH_API_KEY:latest \
-  --set-secrets=ARBI_API_KEY=ARBI_API_KEY:latest \
-  --set-secrets=POLYGON_API_KEY=POLYGON_API_KEY:latest \
-  --set-secrets=TELEGRAM_BOT_TOKEN=TELEGRAM_BOT_TOKEN:latest \
-  --set-secrets=TELEGRAM_CHAT_ID=TELEGRAM_CHAT_ID:latest \
-  --set-secrets=REDIS_PASSWORD=REDIS_PASSWORD:latest \
-  --allow-unauthenticated
 
-
-
-
-nano data/online_learning.py
-
-cd ~/binance1
-nano main.py  
-
-nano data/data_loader.py
-
-nano data/batch_learning.py
-
-nano data/feature_engineering.py
-
-
-core/ modülü?
-
-data/ modülü?
-
-models/ modülü?
-
-websocket/ modülü?
-
-monitoring/ modülü?
-
-telegram/ komutları?
