@@ -1,3 +1,9 @@
+VM giriş
+gcloud compute ssh binance-bot-vm --zone=europe-west2-b
+
+
+
+
 kütüphaneler
 
 python -m pip install --user redis
