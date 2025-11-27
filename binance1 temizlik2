@@ -1,4 +1,14 @@
 ###########################################
+# Genel Ortam Ayarları
+###########################################
+ENV=production
+LOG_LEVEL=INFO
+LOG_PATH=logs
+USE_CLOUD=True
+CLOUD_LOGGING=True
+PORT=8080
+
+###########################################
 # Binance API
 ###########################################
 BINANCE_API_KEY=
@@ -8,14 +18,18 @@ BINANCE_API_SECRET=
 # OKX API
 ###########################################
 OKX_API_KEY=
-OKX_SECRET_KEY=
+OKX_API_SECRET=
 OKX_PASSPHRASE=
+# Opsiyonel, boş kalırsa default https://www.okx.com kullanılır
+OKX_BASE_URL=https://www.okx.com
 
 ###########################################
 # Telegram Uyarı Sistemi
 ###########################################
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=
+# Telegram alert sistemi açık/kapat
+TELEGRAM_ALERTS=True
 
 ###########################################
 # Redis Ayarları
@@ -28,14 +42,19 @@ REDIS_PASSWORD=
 ###########################################
 # Bot Çalışma Ayarları
 ###########################################
-# Test modu: false → gerçek işleme geçer
+# Test modu: False → DRY-RUN (gerçek emir yok)
+# True → Gerçek işleme geçer
 LIVE_TRADING_ENABLED=False
 
-# İşlem yapılacak sembol
+# İşlem yapılacak sembol (Config.BINANCE_SYMBOL)
 BINANCE_SYMBOL=BTCUSDT
+# Offline training / websocket için alias
+SYMBOL=BTCUSDT
 
 # Mum aralığı (1m, 5m, 15m, 1h, 4h)
 BINANCE_INTERVAL=1m
+# Offline training / websocket için alias
+INTERVAL=1m
 
 # Çekilecek mum sayısı
 KLINES_LIMIT=500
@@ -61,16 +80,19 @@ BUY_THRESHOLD=0.60
 SELL_THRESHOLD=0.40
 
 ###########################################
-# Alchemy API
+# Alchemy / Ethereum / L2 API
 ###########################################
-POLYGON_API_KEY=
-ARBI_API_KEY=
+# Credentials.ETHEREUM_API_KEY bunu kullanıyor
+ETH_API_KEY=
+# Eski alışkanlığa göre ekstra:
 ALCHEMY_ETH_API_KEY=
 
-###########################################
-# Infura API
-###########################################
+# Infura
 INFURA_API_KEY=
+
+# Polygon / Arbitrum RPC
+POLYGON_API_KEY=
+ARBI_API_KEY=
 
 ###########################################
 # The Graph API
@@ -108,14 +130,6 @@ ETHERSCAN_API_KEY=
 SANTIMENT_API_KEY=
 
 ###########################################
-# Cloud Run Ayarları
-###########################################
-PORT=8080
-USE_CLOUD=True
-CLOUD_LOGGING=True
-LOG_LEVEL=INFO
-
-###########################################
-# Ek Ayarlar (Opsiyonel)
+# Harici Data Kaynağı (Opsiyonel)
 ###########################################
 EXTERNAL_DATA_URL=
