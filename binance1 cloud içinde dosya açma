@@ -1,0 +1,99 @@
+📂 Ana dizin dosyaları
+nano .env
+nano .gitignore
+nano Dockerfile
+nano README.md
+nano __init__.py
+nano main.py
+nano requirements.txt
+
+✅ 📁 config klasörü
+nano config/__init__.py
+nano config/credentials.py
+nano config/load_env.py
+nano config/redis_config.py
+nano config/settings.py
+nano config/supervisor.conf
+
+✅ 📁 core klasörü
+nano core/cache_manager.py
+nano core/exceptions.py
+nano core/logger.py
+nano core/notifier.py
+nano core/okx_client.py
+nano core/utils.py
+
+✅ 📁 data klasörü
+nano data/anomaly_detection.py
+nano data/batch_learning.py
+nano data/data_loader.py
+nano data/feature_engineering.py
+nano data/online_learning.py
+
+✅ 📁 deployment klasörü
+nano deployment/cloud_run.yaml
+nano deployment/dockerfile
+nano deployment/setup_google_cloud.sh
+nano deployment/startup_supervisor.sh
+
+✅ 📁 env klasörü
+nano env/.env
+nano env/__init__.py
+nano env/load_env.py
+nano env/validate_env.py
+
+✅ 📁 logs klasörü
+nano logs/errors.log
+nano logs/risk_state.json
+nano logs/system.log
+nano logs/trades.log
+
+✅ 📁 models klasörü
+nano models/Fallback_model.py
+nano models/__init__.py
+nano models/catboost_model.py
+nano models/ensemble_model.py
+nano models/fallback_model.py
+nano models/hyperparameter_tuner.py
+nano models/lightgbm_model.py
+nano models/lstm_model.py
+nano models/online_model.joblib   # (binary dosya, nano ile açılmaz!)
+
+
+online_model.joblib bir binary dosyadır. Nano ile açarsan bozuk karakter görürsün.
+
+✅ 📁 monitoring klasörü
+nano monitoring/alert_system.py
+nano monitoring/performance_tracker.py
+nano monitoring/system_health.py
+nano monitoring/trade_logger.py
+
+✅ 📁 tests klasörü
+nano tests/test_api.py
+nano tests/test_models.py
+nano tests/test_notifier.py
+nano tests/test_redis.py
+nano tests/test_trading.py
+
+✅ 📁 tg_bot klasörü
+nano tg_bot/__init__.py
+nano tg_bot/commands.py
+nano tg_bot/message_formatter.py
+nano tg_bot/telegram_bot.py
+
+✅ 📁 trading klasörü
+nano trading/capital_manager.py
+nano trading/fallback_trade.py
+nano trading/multi_trade_engine.py
+nano trading/position_manager.py
+nano trading/risk_manager.py
+nano trading/strategy_engine.py
+nano trading/trade_executor.py
+
+✅ 📁 training klasörü
+nano training/offline_pretrain_six_months.py
+
+✅ 📁 websocket klasörü
+nano websocket/binance_ws.py
+nano websocket/reconnect_manager.py
+nano websocket/stream_handler.py
