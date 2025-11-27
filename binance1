@@ -73,7 +73,11 @@ try:
 except Exception as e:
     print("❌ futures_account ERROR:", e)
 EOF
-
+--------------
+env dosya içini görme
+cp .env.example .env
+nano .env
+--------------
 
 
 cd ~/binance1
