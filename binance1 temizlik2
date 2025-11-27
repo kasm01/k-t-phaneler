@@ -1,15 +1,121 @@
-Kullanım
+###########################################
+# Binance API
+###########################################
+BINANCE_API_KEY=
+BINANCE_API_SECRET=
 
-Ne zaman istersen (özellikle):
-Çok deploy yaptığında
-Disk/Kota/aşım sorunları hissettiğinde
-Cloud Shell yavaşladığında şunu çalıştır:
+###########################################
+# OKX API
+###########################################
+OKX_API_KEY=
+OKX_SECRET_KEY=
+OKX_PASSPHRASE=
 
-./cloudshell_cleanup.sh
+###########################################
+# Telegram Uyarı Sistemi
+###########################################
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
 
-Sana sırayla soracak:
-Docker cache temizlensin mi?
-pip cache temizlensin mi?
-/tmp temizlensin mi?
-Hepsine y dersen full temizlik yapar, Enter / n dersen o adımı atlar.
+###########################################
+# Redis Ayarları
+###########################################
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_PASSWORD=
 
+###########################################
+# Bot Çalışma Ayarları
+###########################################
+# Test modu: false → gerçek işleme geçer
+LIVE_TRADING_ENABLED=False
+
+# İşlem yapılacak sembol
+BINANCE_SYMBOL=BTCUSDT
+
+# Mum aralığı (1m, 5m, 15m, 1h, 4h)
+BINANCE_INTERVAL=1m
+
+# Çekilecek mum sayısı
+KLINES_LIMIT=500
+
+# Bot ana döngü bekleme süresi (saniye)
+MAIN_LOOP_SLEEP=60
+
+# Aynı anda maksimum açık pozisyon
+MAX_PARALLEL_TRADES=3
+
+###########################################
+# Risk Yönetimi
+###########################################
+MAX_RISK_PER_TRADE=0.02
+MAX_DAILY_LOSS_PCT=0.05
+STOP_LOSS_PCT=0.01
+DEFAULT_LEVERAGE=3
+
+###########################################
+# Sinyal Eşikleri
+###########################################
+BUY_THRESHOLD=0.60
+SELL_THRESHOLD=0.40
+
+###########################################
+# Alchemy API
+###########################################
+POLYGON_API_KEY=
+ARBI_API_KEY=
+ALCHEMY_ETH_API_KEY=
+
+###########################################
+# Infura API
+###########################################
+INFURA_API_KEY=
+
+###########################################
+# The Graph API
+###########################################
+GRAPH_API_KEY=
+
+###########################################
+# CoinGlass API
+###########################################
+COINGLASS_API_KEY=
+
+###########################################
+# BscScan API
+###########################################
+BSCSCAN_API_KEY=
+
+###########################################
+# CryptoQuant API
+###########################################
+CRYPTOQUANT_API_KEY=
+
+###########################################
+# CoinMarketCap API
+###########################################
+COINMARKETCAP_API_KEY=
+
+###########################################
+# Etherscan API
+###########################################
+ETHERSCAN_API_KEY=
+
+###########################################
+# Santiment API
+###########################################
+SANTIMENT_API_KEY=
+
+###########################################
+# Cloud Run Ayarları
+###########################################
+PORT=8080
+USE_CLOUD=True
+CLOUD_LOGGING=True
+LOG_LEVEL=INFO
+
+###########################################
+# Ek Ayarlar (Opsiyonel)
+###########################################
+EXTERNAL_DATA_URL=
